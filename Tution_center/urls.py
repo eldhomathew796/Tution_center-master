@@ -382,7 +382,10 @@ urlpatterns = [
       re_path(r'^account_payment_view/(?P<id>\d+)$', views.account_payment_view,name='account_payment_view'),
       re_path(r'^Account_staffprevious/$', views.Account_staffprevious, name='Account_staffprevious'),
       #*******************accounts***************
-      re_path(r'^accounts_staff/$',views.accounts_staff,name='accounts_staff'),
+    #   re_path(r'^xaccounts_staff/$',views.xaccounts_staff,name='xaccounts_staff'),
+      re_path(r'^abc/$',views.abc,name='abc'),
+      re_path(r'^CurrentStaffaccounts/$',views.CurrentStaffaccounts,name='CurrentStaffaccounts'),
+      re_path(r'^previousstaffaccounts/$',views.previousstaffaccounts,name='previousstaffaccounts')
 
 
 

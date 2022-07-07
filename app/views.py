@@ -3148,5 +3148,12 @@ def Account_staffprevious(request):
 
     #account details
 
-def accounts_staff(request):
-    return render(request,'staff_accounts.html')    
+def abc(request):
+    return render(request,'xaccount_staff.html')
+def CurrentStaffaccounts(request):
+    return render(request,'staffcurrentaccount.html') 
+
+def previousstaffaccounts(request):
+    return render(request,'staffpreviousaccount.html')         
+
+     

@@ -190,3 +190,12 @@ class acntspayslip(models.Model):
     leatype = models.CharField(max_length=255,default='')
     pftype =  models.CharField(max_length=255,default='')
     esitype =  models.CharField(max_length=255,default='')
+
+class accounts(models.Model):
+    des = models.ForeignKey(designation, on_delete=models.CASCADE)
+    name=models.CharField(max_length=255,default='')
+    email=models.EmailField()
+    phonenumber=models.IntegerField()
+    dateofappointment=models.DateField()
+    employid=models.CharField(max_length=255)
+    payment=models.IntegerField()

@@ -1,0 +1,71 @@
+{% extends 'Man_index.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="card-body">
+    <h3 class="card-title">Current Student</h3>
+    <div class="form-group">
+        <input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" style="color:white;">
+    </div>
+    <div class="table-responsive">
+        <table class="table" id="myTable">
+            <thead>
+               
+                <tr class="header">
+
+                  <th> Sl.no</th>
+                  <th> Name</th>
+                  <th> Email </th>
+                  <th> Phone number </th>
+                  <th> Date of Appointment </th>
+                  <th> Phone no </th>
+                 <th> Status </th>
+
+                </tr>
+                
+            </thead>
+            <tbody id="myTable">
+                
+               
+              <tr data-href="/Manager_studentprofile/3/" style="cursor: pointer;">
+                 
+                <td>1</td>
+                
+                <td>studentname</td>
+                
+                <td>student@gmail.com</td>
+                <td>None</td>
+                
+                <td>None</td>
+                
+                <td>9857485965</td>
+                
+                <td><div class="badge badge-outline-success">active</div></td>
+               
+            </tr>
+               
+              
+              <tr data-href="/Manager_studentprofile/4/" style="cursor: pointer;">
+                 
+                <td>2</td>
+                
+                <td>student1</td>
+                
+                <td>student1@gmail.com</td>
+                <td>222258</td>
+                
+                <td>student1</td>
+                
+                <td>54531</td>
+                
+                <td><div class="badge badge-outline-success">active</div></td>
+               
+            </tr>
+             
+           
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

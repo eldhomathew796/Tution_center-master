@@ -39,15 +39,15 @@
 
 <body>
     <div class="container-scroller">
-        {% for user in man %}
+        {% for i in mem %}
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
                 <a class="sidebar-brand brand-logo text-light text-decoration-none" href="index.html">
-                    <p style="color: white; opacity: 1; font-size: 28px;margin-top: 3vh;">TUTION CENTER</p>
+                    <p style="color: white; opacity: 1; font-size: 25px;margin-top: 3vh;">Tution Centre</p>
                 </a>
                 <a class="sidebar-brand brand-logo-mini text-light text-decoration-none" href="index.html">
-                    <p style="color: white; opacity: 1; font-size: 35px;margin-top: 3vh;">TC</p>
+                    <p style="color: white; opacity: 1; font-size: 35px;margin-top: 3vh;">i</p>
                 </a>
             </div>
             <ul class="nav">
@@ -55,17 +55,22 @@
                     <div class="profile-desc">
                         <div class="profile-pic">
                             <div class="count-indicator">
-                                <img class="img-xs rounded-circle " src="{{ user.photo.url }}" alt="">
+                                <img class="img-xs rounded-circle " src="{{i.photo.url}}" alt="">
                                 <span class="count bg-success"></span>
                             </div>
+                        
+                     
+                        
+                            
                             <div class="profile-name">
-                                <h5 class="mb-0 font-weight-normal">{{ user.fullname }}</h5>
-                                <span>{{ user.designation.designation }}</span>
+                                <h5 class="mb-0 font-weight-normal">{{i.fullname}}</h5>
+                                <span>{{i.designation}}</span>
                             </div>
-                        </div>
+                        </div>    
+                        
                         <a href="#" id="profile-dropdown" data-bs-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
                         <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-                            <a href="{% url 'MAN_accsetting' %}" class="dropdown-item preview-item">
+                            <a href="{% url 'Staff_accsetting' %}" class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
                                     <div class="preview-icon bg-dark rounded-circle">
                                         <i class="mdi mdi-settings text-primary"></i>
@@ -76,7 +81,7 @@
                                 </div>
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a href="{% url 'MAN_changepwd' %}" class="dropdown-item preview-item">
+                            <a href="{% url 'Staff_changepwd' %}" class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
                                     <div class="preview-icon bg-dark rounded-circle">
                                         <i class="mdi mdi-onepassword  text-info"></i>
@@ -95,7 +100,7 @@
                     <span class="nav-link">Navigation</span>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="{% url 'MAN_profile' %}">
+                    <a class="nav-link" href="{% url 'Staff_dashboard' %}">
                         <span class="menu-icon">
               <i class="mdi mdi-apps"></i>
             </span>
@@ -103,19 +108,11 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="{% url 'MAN_registration' %}">
+                    <a class="nav-link" href="{% url 'Staff_attendance' %}">
                         <span class="menu-icon">
               <i class="mdi mdi-cube-outline"></i>
             </span>
-                        <span class="menu-title">Registration</span>
-                    </a>
-                </li>
-                <li class="nav-item menu-items">
-                    <a class="nav-link" href="{% url 'Manager_staff' %}">
-                        <span class="menu-icon">
-              <i class="mdi mdi-clipboard-text"></i>
-            </span>
-                        <span class="menu-title">Staff</span>
+                        <span class="menu-title">Attendance</span>
                     </a>
                 </li>
                 <li class="nav-item menu-items">
@@ -126,53 +123,41 @@
                         <span class="menu-title">Accounts</span>
                     </a>
                 </li>
-
-
-
-
-
-               
-                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="{% url 'Manager_student' %}">
-                        <span class="menu-icon">
-              <i class="mdi mdi-certificate"></i>
-            </span>
-                        <span class="menu-title">Student</span>
-                    </a>
-                </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="{% url 'MAN_academics' %}">
+                    <a class="nav-link" href="{% url 'Staff_reportissues' %}">
                         <span class="menu-icon">
-              <i class="mdi mdi-file-document-box"></i>
-            </span>
-                        <span class="menu-title">Academic</span>
-                    </a>
-                </li>
-               
-                <li class="nav-item menu-items">
-                    <a class="nav-link" href=" {% url 'man_page1' %}">
-                      <span class="menu-icon">
-                        <i class="mdi mdi-folder-plus"></i>
-                      </span>
-                      <span class="menu-title">Attendance</span>
-                    </a>
-                  </li>
-                <li class="nav-item menu-items">
-                    <a class="nav-link" href="{% url 'MAN_Report' %}">
-                        <span class="menu-icon">
-              <i class="mdi mdi-file-document-box"></i>
+              <i class="mdi mdi-clipboard-text"></i>
             </span>
                         <span class="menu-title">Reported Issues</span>
                     </a>
                 </li>
-                <li class="nav-item menu-items">
-                    <a class="nav-link" href="{% url 'Manager_leaverequest_staff' %}">
+               
+                 <li class="nav-item menu-items">
+                    <a class="nav-link" href="{% url 'Staff_leave' %}">
                         <span class="menu-icon">
-              <i class="mdi mdi-human-greeting"></i>
+              <i class="mdi mdi-certificate"></i>
             </span>
                         <span class="menu-title">Leave Request</span>
                     </a>
                 </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" href="{% url 'Staff_Student_det' %}">
+                        <span class="menu-icon">
+              <i class="mdi mdi-file-document-box"></i>
+            </span>
+                        <span class="menu-title">Students</span>
+                    </a>
+                </li>
+               
+                <li class="nav-item menu-items">
+                    <a class="nav-link" href="{% url 'Staff_progress_report' %}">
+                      <span class="menu-icon">
+                        <i class="mdi mdi-folder-plus"></i>
+                      </span>
+                      <span class="menu-title">Progress Report</span>
+                    </a>
+                  </li>
+                
                
             </ul>
         </nav>
@@ -182,7 +167,7 @@
             <nav class="navbar p-0 fixed-top d-flex flex-row">
                 <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
                     <a class="sidebar-brand brand-logo-mini text-light text-decoration-none" href="index.html">
-                        <p style="color: white; opacity: 1; font-size: 28px;margin-top: 3vh;padding-left: 100px;">TUTION CENTER</p>
+                        <p style="color: white; opacity: 1; font-size: 25px;margin-top: 3vh;padding-left: 100px;">Tution Centre</p>
                     </a>
                 </div>
                 <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
@@ -194,8 +179,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                                 <div class="navbar-profile">
-                                    <img class="img-xs rounded-circle" src="{{ user.photo.url }}" alt="">
-                                    <p class="mb-0 d-none d-sm-block navbar-profile-name">{{ user.fullname }}</p>
+                                    <img class="img-xs rounded-circle" src="{{i.photo.url}}" alt="">
+                                    <p class="mb-0 d-none d-sm-block navbar-profile-name">{{i.fullname}}</p>
                                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                                 </div>
                             </a>
@@ -203,7 +188,7 @@
                                 <h6 class="p-3 mb-0">Profile</h6>
                                 <div class="dropdown-divider"></div>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item preview-item" href="{% url 'Man_logout' %}">
+                                <a class="dropdown-item preview-item" href="{% url 'Staff_logout' %}">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
                                             <i class="mdi mdi-logout text-danger"></i>
@@ -225,17 +210,15 @@
             {% endfor %}
             <!-- partial -->
             <div class="main-panel">
-                {%block content%}
-                    
-                {%endblock%}
                 <div class="content-wrapper">
-                  
+                    {% block content %} {% endblock %}
                 </div>
-                <div>
-                     <!-- main-panel ends -->
-                </div>
+            <div>
+                    
+                    <!-- main-panel ends -->
+                
                 <!-- page-body-wrapper ends -->
-            </div>
+           
             <!-- container-scroller -->
             <!-- plugins:js -->
             <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
