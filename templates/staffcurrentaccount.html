@@ -20,51 +20,41 @@
                   <th> Phone number </th>
                   <th> Date of Appointment </th>
                   <th> Employee id </th>
-                  <th> Salary</th>
+                  <th> Salary Basic</th>
+                  <th>Salary Total</th>
                  <th> Status </th>
 
                 </tr>
                 
             </thead>
             <tbody id="myTable">
-                
+                {% for i in obj %}  
                
               <tr data-href="/Manager_studentprofile/3/" style="cursor: pointer;">
-                 
-                <td>1</td>
                 
-                <td>staffname1</td>
+              
+                <td>{{ forloop.counter }}</td>
+                <td>{{i.name}}</td>
                 
-                <td>staff@gmail.com</td>
-                <td>9895012456</td>
+                <td>{{i.email}}</td>
                 
-                <td>02-10-2018</td>
+                <td>{{i.phonenumber}}</td>
+                <td>{{i.dateofappointment}}</td>
                 
-                <td>E1256</td>
-                <td>30000</td>
+                <td>{{i.employid}}</td>
+                
+            
+                <td>{{i.salary.basic_salary}}</td>
+                <td>{{i. salaryenter}}</td>
                 
                 <td><div class="badge badge-outline-success">active</div></td>
                
             </tr>
+            {% endfor %}
                
               
-              <tr data-href="/Manager_studentprofile/4/" style="cursor: pointer;">
-                 
-                <td>2</td>
-                
-                <td>staffname2</td>
-                
-                <td>staff2@gmail.com</td>
-                <td>8547121364</td>
-                
-                <td>10/12/2019</td>
-                
-                <td>54531</td>
-                <td>40000</td>
-                
-                <td><div class="badge badge-outline-success">active</div></td>
                
-            </tr>
+            
              
            
             </tbody>

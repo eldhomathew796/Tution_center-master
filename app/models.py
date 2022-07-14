@@ -197,5 +197,8 @@ class accounts(models.Model):
     email=models.EmailField()
     phonenumber=models.IntegerField()
     dateofappointment=models.DateField()
+    dateofressigning=models.DateField(null=True, blank=True)
     employid=models.CharField(max_length=255)
-    payment=models.IntegerField()
+    
+    salary=models.ForeignKey( acntspayslip,on_delete=models.CASCADE)
+    salaryenter=models.IntegerField(null=True, blank=True)
