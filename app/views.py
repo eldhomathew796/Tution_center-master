@@ -3163,16 +3163,17 @@ def accounts_fun(request):
     return render(request,"staffcurrentaccount.html",context)
 
 def staffacountreg(request):
-    if request.method=="POST":
-        name=request.POST['name']
-        email=request.POST['email']
-        number=request.POST['number']
-        datea=request.POST['datea']
-        dater=request.POST['dater']
-        employee=request.POST['employee']
-        salary=request.POST['salary']
-        staffdetails=accounts(name=name,email=email,number=number,datea=datea,dater=dater,employee=employee,salary=salary)
-        staffdetails.save()
-        
+        if request.method=="POST":
+            name=request.POST['name']
+            email=request.POST['email']
+            number=request.POST['number']
+            datea=request.POST['datea']
+            dater=request.POST['dater']
+            employee=request.POST['employee']
+            salary=request.POST['salary']
+            staffdetails=accounts(name=name,email=email,number=number,datea=datea,dater=dater,employee=employee,salary=salary)
+            staffdetails.save()
+            return redirect('staffacountreg')
+    return render(request,'staffaccountsreg.html')        
 
      
