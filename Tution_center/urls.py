@@ -385,7 +385,11 @@ urlpatterns = [
     #   re_path(r'^xaccounts_staff/$',views.xaccounts_staff,name='xaccounts_staff'),
       re_path(r'^abc/$',views.abc,name='abc'),
       re_path(r'^CurrentStaffaccounts/$',views.CurrentStaffaccounts,name='CurrentStaffaccounts'),
-      re_path(r'^previousstaffaccounts/$',views.previousstaffaccounts,name='previousstaffaccounts')
+      re_path(r'^previousstaffaccounts/$',views.previousstaffaccounts,name='previousstaffaccounts'),
+      re_path(r'^accounts_dete/$',views.accounts_dete,name='accounts_dete'),
+      re_path(r'^ accounts_detpr/$',views.accounts_detpr,name='accounts_detpr'),
+      re_path(r'^staffacountreg/$',views.staffacountreg,name='staffacountreg'),
+      re_path(r'^regpage/$',views.regpage,name='regpage')
 
 
 

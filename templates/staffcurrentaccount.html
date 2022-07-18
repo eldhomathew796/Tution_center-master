@@ -5,9 +5,11 @@
 
 <div class="card-body">
     <h3 class="card-title">Current Accounts</h3>
+    <form>
     <div class="form-group">
         <input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" style="color:white;">
     </div>
+    </form>
     <div class="table-responsive">
         <table class="table" id="myTable">
             <thead>
@@ -20,7 +22,7 @@
                   <th> Phone number </th>
                   <th> Date of Appointment </th>
                   <th> Employee id </th>
-                  <th> Salary Basic</th>
+              
                   <th>Salary Total</th>
                  <th> Status </th>
 
@@ -28,6 +30,7 @@
                 
             </thead>
             <tbody id="myTable">
+                <tbody>
                 {% for i in obj %}  
                
               <tr data-href="/Manager_studentprofile/3/" style="cursor: pointer;">
@@ -44,13 +47,26 @@
                 <td>{{i.employid}}</td>
                 
             
-                <td>{{i.salary.basic_salary}}</td>
-                <td>{{i. salaryenter}}</td>
+               
+                <td>{{i.salaryenter}}</td>
                 
                 <td><div class="badge badge-outline-success">active</div></td>
                
             </tr>
             {% endfor %}
+            </tbody>
+
+            
+            <script>
+                $(document).ready(function() {
+                    $("#myInput").on("keyup", function() {
+                        var value = $(this).val().toLowerCase();
+                        $("#myTable tr").filter(function() {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    });
+                });
+            </script>
                
               
                

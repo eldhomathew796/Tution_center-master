@@ -4,7 +4,7 @@
 
 
 <div class="card-body">
-    <h3 class="card-title">Previous Account </h3>
+    <h3 class="card-title">Previous Accounts</h3>
     <div class="form-group">
         <input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" style="color:white;">
     </div>
@@ -18,54 +18,58 @@
                   <th> Name</th>
                   <th> Email </th>
                   <th> Phone number </th>
-                  <th> Date of Resigning </th>
+                  <th> Date of Appointment </th>
+                  <th>Date of Resigning</th>
                   <th> Employee id </th>
+                  
                  <th> Status </th>
 
                 </tr>
                 
             </thead>
             <tbody id="myTable">
-                
+                {% for i in obj %}  
                
               <tr data-href="/Manager_studentprofile/3/" style="cursor: pointer;">
-                 
-                <td>1</td>
                 
-                <td>staffname</td>
+              
+                <td>{{ forloop.counter }}</td>
+                <td>{{i.name}}</td>
                 
-                <td>staff@gmail.com</td>
-                <td>7901253625</td>
+                <td>{{i.email}}</td>
                 
-                <td>03-05-2020</td>
+                <td>{{i.phonenumber}}</td>
+                <td>{{i.dateofappointment}}</td>
+                <td>{{i.dateofressigning}}</td>
                 
-                <td>9857485965</td>
-                <td>H5647</td>
+                <td>{{i.employid}}</td>
                 
-                <td><div class="badge badge-outline-success">active</div></td>
+            
+                
+                
+                <td><div class="badge badge-outline-success">deactive</div></td>
                
             </tr>
+            {% endfor %}
                
               
-              <tr data-href="/Manager_studentprofile/4/" style="cursor: pointer;">
-                 
-                <td>2</td>
-                
-                <td>staffname</td>
-                
-                <td>staff2@gmail.com</td>
-                <td>6245689561</td>
-                
-                <td>06-04-2021</td>
-                
-                <td>54531</td>
-                
-                <td><div class="badge badge-outline-success">active</div></td>
                
-            </tr>
+            
              
            
             </tbody>
+            <script>
+                $(document).ready(function() {
+                    $("#myInput").on("keyup", function() {
+                        var value = $(this).val().toLowerCase();
+                        $("#myTable tr").filter(function() {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    });
+                });
+            </script>
+
+
         </table>
     </div>
 </div>

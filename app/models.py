@@ -192,7 +192,7 @@ class acntspayslip(models.Model):
     esitype =  models.CharField(max_length=255,default='')
 
 class accounts(models.Model):
-    des = models.ForeignKey(designation, on_delete=models.CASCADE)
+    des = models.ForeignKey(designation, on_delete=models.CASCADE,null=True,blank=True)
     name=models.CharField(max_length=255,default='')
     email=models.EmailField()
     phonenumber=models.IntegerField()
@@ -200,5 +200,5 @@ class accounts(models.Model):
     dateofressigning=models.DateField(null=True, blank=True)
     employid=models.CharField(max_length=255)
     
-    salary=models.ForeignKey( acntspayslip,on_delete=models.CASCADE)
+    salary=models.ForeignKey(acntspayslip,on_delete=models.CASCADE,null=True,blank=True)
     salaryenter=models.IntegerField(null=True, blank=True)
