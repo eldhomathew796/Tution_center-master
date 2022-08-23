@@ -31,7 +31,7 @@
             </thead>
             <tbody id="myTable">
                 <tbody>
-                {% for i in obj %}  
+                {% for i in acc %}  
                
               <tr data-href="/Manager_studentprofile/3/" style="cursor: pointer;">
                 
@@ -41,14 +41,16 @@
                 
                 <td>{{i.email}}</td>
                 
-                <td>{{i.phonenumber}}</td>
-                <td>{{i.dateofappointment}}</td>
+                <td>{{i.number}}</td>
+                <td>{{i.datea}}</td>
                 
-                <td>{{i.employid}}</td>
+                <td>{{i.employee}}</td>
+                <td>{{i.salaryenter}}</td>
+
                 
             
                
-                <td>{{i.salaryenter}}</td>
+              
                 
                 <td><div class="badge badge-outline-success">active</div></td>
                

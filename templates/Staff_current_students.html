@@ -50,6 +50,23 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <select class="form-control w-25" name="sel">
+                      <option value="">Select class</option><br> 
+                   
+                      {% for i in cat %}
+                      
+                      <option value="{{i.id}}" >{{i.categoryname}}</option><br>
+                      
+                      {% endfor %}
+                  </select><br>
+                  <input type="submit"  value="Submit" class="form-control w-25 btn btn-dark"><br>
+
+
+
+
+
+
+
                  
                     {% for i in cs %}
                     

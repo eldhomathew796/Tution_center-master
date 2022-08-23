@@ -3173,7 +3173,9 @@ def regpage(request):
     return render(request,'staffaccountsreg.html')       
 
 def staffacountreg(request):
+     
     if request.method=="POST":
+        acc=accounts.objects.all()
         name=request.POST['name']
         email=request.POST['email']
         number=request.POST['number']
@@ -3185,7 +3187,10 @@ def staffacountreg(request):
         staffdetails=accounts(name=name,email=email,phonenumber=number,dateofappointment=datea,dateofressigning=dater,employid=employee,salaryenter=salaryenter)
         staffdetails.save()
         return redirect('staffacountreg')
+    
+    # reg=user_registration.objects.all()
+    # print(reg.id)
 
-    return render(request,'staffaccountsreg.html')        
+    return render(request,'staffcurrentaccount.html',{"acc":acc})        
 
      
