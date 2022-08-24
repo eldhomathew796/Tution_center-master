@@ -3173,9 +3173,11 @@ def regpage(request):
     return render(request,'staffaccountsreg.html')       
 
 def staffacountreg(request):
-     
+    acc=accounts.objects.all()
+    for i in acc:
+        print(i.name) 
     if request.method=="POST":
-        acc=accounts.objects.all()
+        
         name=request.POST['name']
         email=request.POST['email']
         number=request.POST['number']

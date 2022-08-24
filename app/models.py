@@ -202,3 +202,6 @@ class accounts(models.Model):
     
     salary=models.ForeignKey(acntspayslip,on_delete=models.CASCADE,null=True,blank=True)
     salaryenter=models.IntegerField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name

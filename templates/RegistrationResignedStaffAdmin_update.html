@@ -132,5 +132,13 @@
     document.getElementById("appoinment").setAttribute("max", today);
     document.getElementById("startdate").setAttribute("max", today);
     document.getElementById("enddate").setAttribute("max", today);
+    $(document).ready(function() {
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
 </script>
 {% endblock %}
